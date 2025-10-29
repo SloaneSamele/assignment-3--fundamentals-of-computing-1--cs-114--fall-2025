@@ -37,4 +37,14 @@ public class Matrix {
       }
     }
   }
+
+  public void populateMatrix() {
+    int counter = 0;
+
+    for(int y = 0; y < matrix.length; ++y) {
+      for(int x = 0; x < matrix[y].length; ++x){
+        matrix[x][y] = ++counter;
+      }
+    }
+  }
 }
