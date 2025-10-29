@@ -8,5 +8,16 @@ public class RunMatrix {
     System.out.println("Enter a the size of your matrix");
     size = input.nextInt();
     input.close();
+
+    Matrix matrix = new Matrix(4);
+
+    matrix.printMatrix();
+    System.out.println();
+    matrix.populateMatrix();
+    matrix.printMatrix();
+    System.out.println();
+    matrix.flipMatrix();
+    matrix.printMatrix();
+
   }
 }
