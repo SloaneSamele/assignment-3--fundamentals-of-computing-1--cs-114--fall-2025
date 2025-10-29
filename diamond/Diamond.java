@@ -14,7 +14,9 @@ public class Diamond {
 
     for(int r = 0; r < diamond.length; ++r) {
       for(int c = 0; c < diamond[r].length; ++c) {
+        System.out.print("*");
       }
+      System.out.println();
     }
   }
 }
