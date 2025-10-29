@@ -19,4 +19,12 @@ public class Matrix {
     matrix[x1][y1] = matrix[x2][y2];
     matrix[x2][y2] = tempHolder;
   }
+  public void printMatrix(){
+    for(int y = 0; y < matrix.length; ++y) {
+      for(int x = 0; x < matrix[y].length; ++x) {
+        System.out.print(matrix[x][y] + " ");
+      }
+      System.out.println();
+    }
+  }
 }
