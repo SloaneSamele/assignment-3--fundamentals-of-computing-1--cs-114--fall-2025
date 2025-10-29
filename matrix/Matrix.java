@@ -27,4 +27,14 @@ public class Matrix {
       System.out.println();
     }
   }
+  public void flipMatrix(){
+    int lastValue = matrix.length - 1;
+    for(int y = 0; y < matrix.length / 2; ++y){
+      for(int x = 0; x < matrix.length; ++x){
+        if((x + y) != lastValue){
+          swap(x, y, (lastValue - y), (lastValue - x));
+        }
+      }
+    }
+  }
 }
