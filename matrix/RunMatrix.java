@@ -9,7 +9,7 @@ public class RunMatrix {
     size = input.nextInt();
     input.close();
 
-    Matrix matrix = new Matrix(4);
+    Matrix matrix = new Matrix(size);
 
     matrix.printMatrix();
     System.out.println();

@@ -31,8 +31,9 @@ public class Matrix {
     int lastValue = matrix.length - 1;
     for(int y = 0; y < matrix.length / 2; ++y){
       for(int x = 0; x < matrix.length; ++x){
+      for(int x = 0; x < matrix[y].length; ++x){
         if((x + y) != lastValue){
-          swap(x, y, (lastValue - y), (lastValue - x));
+          swap(x, y, (lastValue - x), (lastValue -  y));
         }
       }
     }
