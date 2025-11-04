@@ -2,51 +2,61 @@
 
 public class Diamond {
   public static void main(String[] args) {
-    int size = 6,
+    int size = 9,
         upperLimit,
         lowerLimit;
     int [][] diamond;
+
     // Scanner input = new Scanner(System.in);
 
     // System.out.println("Enter a number: ");
     // size = input.nextInt();
     // input.close();
-    if(size % 2 == 0){
-       diamond = new int[size + 1][size + 1];
-    }
 
-    diamond = new int[size][size];
+    if(size % 2 == 0){
+      diamond = new int[size + 1][size + 1];
+    }
+    else{
+      diamond = new int[size][size];
+    }
 
     lowerLimit = size / 2;
     upperLimit = size / 2;
 
-    // for(int r = 0; r < diamond.length; ++r) {
-    //   for(int c = 0; c < diamond[r].length; ++c) {
-    //     if(c <= upperLimit && c >= lowerLimit){
-    //       System.out.print("*");
-    //     }
-    //     else{
-    //       System.out.print(" ");
-    //     }
-    //   }
-    //   if(r < diamond.length / 2){
-    //     ++upperLimit;
-    //     --lowerLimit;
-    //   }
-    //   else{
-    //     --upperLimit;
-    //     ++lowerLimit;
-    //   }
-    //   System.out.println();
-    // }
+    System.out.println("heigth: " + diamond.length + " width: " + diamond[0].length);
 
-    for(int r = 0; r < diamond.length; ++r){
-      for(int c = 0; c < diamond[r].length; ++c){
-        if(c == size / 2 && (r > 0  && r < diamond.length - 1)){
+    if(size % 2 != 0){
+      System.out.println("odd case");
+
+      for(int row = 0; row < diamond.length; ++row) {
+        for(int col = 0; col < diamond[row].length; ++col) {
+          if(col <= upperLimit && col >= lowerLimit){
+            System.out.print("*");
+          }
+          else{
+            System.out.print(" ");
+          }
+        }
+        if(row < diamond.length / 2){
+          ++upperLimit;
+          --lowerLimit;
+        }
+        else{
+          --upperLimit;
+          ++lowerLimit;
+        }
+        System.out.println();
+      }
+  }
+  else{
+    System.out.println("even case");
+    for(int row = 0; row < diamond.length; ++row){
+      for(int col = 0; col < diamond[row].length; ++col){
+        if(col == size / 2 && (row > 0  && row < diamond.length - 1)){
           System.out.print(" ");
         }
         else{
-          if(c >= lowerLimit && c <= upperLimit){
+          if(col >= lowerLimit && col <= upperLimit){
             System.out.print("*");
           }
           else{
@@ -54,7 +64,7 @@ public class Diamond {
           }
         }
       }
-      if(r < diamond.length / 2 ){
+      if(row < diamond.length / 2 ){
         ++upperLimit;
         --lowerLimit;
       }
@@ -62,8 +72,8 @@ public class Diamond {
         --upperLimit;
         ++lowerLimit;
       }
-
       System.out.println();
+      }
     }
   }
 }
