@@ -2,7 +2,7 @@
 
 public class Diamond {
   public static void main(String[] args) {
-    int size = 4,
+    int size = 6,
         upperLimit,
         lowerLimit;
     int [][] diamond;
@@ -12,54 +12,49 @@ public class Diamond {
     // size = input.nextInt();
     // input.close();
     if(size % 2 == 0){
-      diamond = new int[size + 1][size + 1];
+       diamond = new int[size + 1][size + 1];
     }
-    else{
-      diamond = new int[size][size];
-    }
-    lowerLimit = diamond.length / 2;
-    upperLimit = diamond.length / 2;
 
-    for(int row = 0; row < diamond.length; ++row) {
-      for(int col = 0; col < diamond[row].length; ++col) {
-        if(col <= upperLimit && col >= lowerLimit){
-          System.out.print("*");
-        }
-        else{
+    diamond = new int[size][size];
+
+    lowerLimit = size / 2;
+    upperLimit = size / 2;
+
+    // for(int r = 0; r < diamond.length; ++r) {
+    //   for(int c = 0; c < diamond[r].length; ++c) {
+    //     if(c <= upperLimit && c >= lowerLimit){
+    //       System.out.print("*");
+    //     }
+    //     else{
+    //       System.out.print(" ");
+    //     }
+    //   }
+    //   if(r < diamond.length / 2){
+    //     ++upperLimit;
+    //     --lowerLimit;
+    //   }
+    //   else{
+    //     --upperLimit;
+    //     ++lowerLimit;
+    //   }
+    //   System.out.println();
+    // }
+
+    for(int r = 0; r < diamond.length; ++r){
+      for(int c = 0; c < diamond[r].length; ++c){
+        if(c == size / 2 && (r > 0  && r < diamond.length - 1)){
           System.out.print(" ");
         }
-      }
-      if(row < diamond.length / 2){
-        ++upperLimit;
-        --lowerLimit;
-      }
-      else{
-        --upperLimit;
-        ++lowerLimit;
-      }
-      System.out.println();
-    }
-
-
-
-
-
-
-
-
-
-    for(int row = 0; row < diamond.length; ++row) {
-      for(int col = 0; col < diamond[row].length; ++col) {
-        if(row != 0 || row != diamond.length - 1){
-          if(col <= upperLimit && col >= lowerLimit){
+        else{
+          if(c >= lowerLimit && c <= upperLimit){
             System.out.print("*");
           }
           else{
-          System.out.print(" ");
-        }
+            System.out.print(" ");
+          }
         }
       }
-      if(row < diamond.length / 2){
+      if(r < diamond.length / 2 ){
         ++upperLimit;
         --lowerLimit;
       }
@@ -67,6 +62,7 @@ public class Diamond {
         --upperLimit;
         ++lowerLimit;
       }
+
       System.out.println();
     }
   }
