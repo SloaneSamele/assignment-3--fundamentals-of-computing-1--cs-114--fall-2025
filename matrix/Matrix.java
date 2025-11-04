@@ -1,7 +1,7 @@
 public class Matrix {
   private int[][] matrix;
-  public static final String YELLOW =        "\033[33m\033[1m";
-  public static final String NORMAL =        "\033[0m";
+  public static final String YELLOW = "\033[33m\033[1m";
+  public static final String NORMAL = "\033[0m";
 
   public Matrix(int size){
     matrix = new int[size][size];
@@ -20,10 +20,10 @@ public class Matrix {
     for(int y = 0; y < matrix.length; ++y) {
       for(int x = 0; x < matrix[y].length; ++x) {
         if((x + y) == matrix.length - 1){
-          System.out.printf("%s%4d%s    ", YELLOW, matrix[x][y], NORMAL);
+          System.out.printf("%s%4d%s", YELLOW, matrix[x][y], NORMAL);
         }
         else{
-        System.out.printf("%4d    ", matrix[x][y]);
+        System.out.printf("%4d", matrix[x][y]);
         }
       }
       System.out.println();
