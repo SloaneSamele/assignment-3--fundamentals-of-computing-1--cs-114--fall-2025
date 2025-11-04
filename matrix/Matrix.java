@@ -7,12 +7,6 @@ public class Matrix {
     matrix = new int[size][size];
 
     System.out.println("You have made a matrix of " + size + " X " + size);
-
-    for(int y = 0; y < size; ++y){
-      for(int x = 0; x < size; ++x){
-        matrix[x][y] = 0;
-      }
-    }
   }
 
   private void swap(int x1,int y1,int x2,int y2){
