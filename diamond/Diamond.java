@@ -39,5 +39,35 @@ public class Diamond {
       }
       System.out.println();
     }
+
+
+
+
+
+
+
+
+
+    for(int row = 0; row < diamond.length; ++row) {
+      for(int col = 0; col < diamond[row].length; ++col) {
+        if(row != 0 || row != diamond.length - 1){
+          if(col <= upperLimit && col >= lowerLimit){
+            System.out.print("*");
+          }
+          else{
+          System.out.print(" ");
+        }
+        }
+      }
+      if(row < diamond.length / 2){
+        ++upperLimit;
+        --lowerLimit;
+      }
+      else{
+        --upperLimit;
+        ++lowerLimit;
+      }
+      System.out.println();
+    }
   }
 }
