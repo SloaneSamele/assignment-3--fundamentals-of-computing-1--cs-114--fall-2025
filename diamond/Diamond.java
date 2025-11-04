@@ -1,9 +1,7 @@
-//import java.util.Scanner;
 // import java.util.Scanner;
 
 public class Diamond {
   public static void main(String[] args) {
-    int size = 3, count = 1;
     int size = 4,
         upperLimit,
         lowerLimit;
@@ -13,6 +11,14 @@ public class Diamond {
     // System.out.println("Enter a number: ");
     // size = input.nextInt();
     // input.close();
+    if(size % 2 == 0){
+      diamond = new int[size + 1][size + 1];
+    }
+    else{
+      diamond = new int[size][size];
+    }
+    lowerLimit = diamond.length / 2;
+    upperLimit = diamond.length / 2;
 
     for(int row = 0; row < diamond.length; ++row) {
       for(int col = 0; col < diamond[row].length; ++col) {
