@@ -2,7 +2,7 @@
 
 public class Diamond {
   public static void main(String[] args) {
-    int size = 9,
+    int size = 8,
         upperLimit,
         lowerLimit;
     int [][] diamond;
@@ -14,7 +14,7 @@ public class Diamond {
     // input.close();
 
     if(size % 2 == 0){
-      diamond = new int[size + 1][size + 1];
+      diamond = new int[size + 1][size * 2 + 1];
     }
     else{
       diamond = new int[size][size];
@@ -53,24 +53,29 @@ public class Diamond {
     for(int row = 0; row < diamond.length; ++row){
       for(int col = 0; col < diamond[row].length; ++col){
         if(col == size / 2 && (row > 0  && row < diamond.length - 1)){
-          System.out.print(" ");
         }
         else{
           if(col >= lowerLimit && col <= upperLimit){
-            System.out.print("*");
+            if(col % 2 == 0){
+              System.out.print("*");
+            }
+            else{
+              System.out.print(" ");
+            }
           }
           else{
             System.out.print(" ");
           }
         }
       }
+      System.out.print("lower limit: " + lowerLimit + " Upper Limit: " + upperLimit);
       if(row < diamond.length / 2 ){
-        ++upperLimit;
+        upperLimit += 2;
         --lowerLimit;
       }
       else{
-        --upperLimit;
-        ++lowerLimit;
+        upperLimit -= 2;
+        --lowerLimit;
       }
       System.out.println();
       }
