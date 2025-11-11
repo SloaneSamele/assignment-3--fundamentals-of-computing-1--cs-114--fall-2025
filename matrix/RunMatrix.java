@@ -1,12 +1,18 @@
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class RunMatrix {
   public static void main(String[] args) {
-    int size;
+    int size = 0;
     Scanner input = new Scanner(System.in);
 
     System.out.println("Enter a the size of your matrix");
-    size = input.nextInt();
+    try{
+      size = input.nextInt();
+    }
+    catch(NoSuchElementException e){
+      System.err.println("User did not input an interger");
+    }
     input.close();
 
     Matrix matrix = new Matrix(size);
@@ -27,3 +33,5 @@ public class RunMatrix {
     matrix.printMatrix();
   }
 }
+
+//try , catch
