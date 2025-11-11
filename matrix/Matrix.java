@@ -29,6 +29,7 @@ public class Matrix {
   }
 
   public void flipMatrix() {
+    System.out.println("\nFlipping matrix....matrix flipped:\n");
     int lastValue = matrix.length - 1;
 
     for(int y = 0; y < matrix.length / 2; ++y){
@@ -41,6 +42,7 @@ public class Matrix {
   }
 
   public void populateMatrix() {
+    System.out.println("\nPopulating matrix with values....matrix populated:\n");
     int counter = 0;
 
     for(int y = 0; y < matrix.length; ++y) {

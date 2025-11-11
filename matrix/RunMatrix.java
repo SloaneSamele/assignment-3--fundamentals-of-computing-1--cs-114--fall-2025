@@ -19,14 +19,11 @@ public class RunMatrix {
 
     System.out.println("\nPrinting matrix with defalut values:");
     matrix.printMatrix();
-
-    System.out.println("\nPopulating matrix with values....matrix populated:\n");
     matrix.populateMatrix();
 
     System.out.println("Printing matrix:");
     matrix.printMatrix();
 
-    System.out.println("\nFlipping matrix....matrix flipped:\n");
     matrix.flipMatrix();
 
     System.out.println("Printing flipped matrix:");
