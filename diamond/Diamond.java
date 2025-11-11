@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Diamond {
@@ -10,8 +11,14 @@ public class Diamond {
     Scanner input = new Scanner(System.in);
 
     System.out.println("Enter a number: ");
-    size = input.nextInt();
+    try{
+      size = input.nextInt();
+    }
+    catch(NoSuchElementException e){
+      System.out.println("Invaild number");
+    }
     input.close();
+
     if(size % 2 == 0){
       diamond = new int[size + 1][size + 1];
     }
@@ -22,11 +29,7 @@ public class Diamond {
     lowerLimit = size / 2;
     upperLimit = size / 2;
 
-    System.out.println("heigth: " + diamond.length + " width: " + diamond[0].length);
-
     if(size % 2 != 0){
-      System.out.println("odd case");
-
       for(int row = 0; row < diamond.length; ++row) {
         for(int col = 0; col < diamond[row].length; ++col) {
           if(col <= upperLimit && col >= lowerLimit){
@@ -54,11 +57,8 @@ public class Diamond {
       }
   }
   else{
-    System.out.println("even case");
-
     for(int row = 0; row < diamond.length; ++row){
       for(int col = 0; col < diamond[row].length; ++col){
-        //Top and Bottom Case
         if(row == 0 || row == diamond.length - 1){
           if(col >= lowerLimit && col <= upperLimit){
             System.out.print("*");
@@ -70,18 +70,17 @@ public class Diamond {
             System.out.print("  ");
           }
         }
-        //Middle Cases
         else{
           if(col == diamond.length / 2){
+
             continue;
-
           }
-
           if(col >= lowerLimit && col <= upperLimit){
             System.out.print(" *");
             if(col == upperLimit){
 
               break;
+
             }
           }
           else{
