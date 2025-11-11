@@ -1,21 +1,23 @@
-// import java.util.Scanner;
+import java.util.Scanner;
 
 public class Diamond {
   public static void main(String[] args) {
-    int size = 9,
+    int size = 8,
         upperLimit,
         lowerLimit;
     int [][] diamond;
 
-    // Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
-    // System.out.println("Enter a number: ");
-    // size = input.nextInt();
-    // input.close();
-
-
-    diamond = new int[size][size];
-
+    System.out.println("Enter a number: ");
+    size = input.nextInt();
+    input.close();
+    if(size % 2 == 0){
+      diamond = new int[size + 1][size + 1];
+    }
+    else{
+      diamond = new int[size][size];
+    }
 
     lowerLimit = size / 2;
     upperLimit = size / 2;
@@ -29,13 +31,15 @@ public class Diamond {
         for(int col = 0; col < diamond[row].length; ++col) {
           if(col <= upperLimit && col >= lowerLimit){
             System.out.print("*");
+
             if(col == upperLimit){
+
               break;
 
             }
           }
           else{
-            System.out.print("x");
+            System.out.print(" ");
           }
         }
         if(row < diamond.length / 2){
@@ -51,39 +55,51 @@ public class Diamond {
   }
   else{
     System.out.println("even case");
+
     for(int row = 0; row < diamond.length; ++row){
       for(int col = 0; col < diamond[row].length; ++col){
-        //Top and bottom case
+        //Top and Bottom Case
         if(row == 0 || row == diamond.length - 1){
-          if(col == diamond.length - 1){
+          if(col >= lowerLimit && col <= upperLimit){
             System.out.print("*");
+
+            break;
+
           }
           else{
             System.out.print("  ");
           }
         }
-        //Middle case
-        if(col >= lowerLimit && col <= upperLimit){
+        //Middle Cases
+        else{
           if(col == diamond.length / 2){
+            continue;
+
+          }
+
+          if(col >= lowerLimit && col <= upperLimit){
+            System.out.print(" *");
+            if(col == upperLimit){
+
+              break;
+            }
           }
           else{
-            if(col % 2 != 0){
-              System.out.print(" *");
-            }
+            System.out.print("  ");
           }
         }
       }
 
       if(row < diamond.length / 2){
-        --lowerLimit;
         ++upperLimit;
+        --lowerLimit;
       }
       else{
-        ++lowerLimit;
         --upperLimit;
+        ++lowerLimit;
       }
       System.out.println();
-      }
     }
   }
+}
 }
