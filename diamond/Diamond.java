@@ -45,6 +45,7 @@ public class Diamond {
             System.out.print(" ");
           }
         }
+
         if(row < diamond.length / 2) {
           ++upperLimit;
           --lowerLimit;
@@ -53,6 +54,7 @@ public class Diamond {
           --upperLimit;
           ++lowerLimit;
         }
+
         System.out.println();
       }
   }
@@ -97,6 +99,7 @@ public class Diamond {
         --upperLimit;
         ++lowerLimit;
       }
+
       System.out.println();
     }
   }
