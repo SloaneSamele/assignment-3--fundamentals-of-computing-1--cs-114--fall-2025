@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Diamond {
   public static void main(String[] args) {
     int size = 8,
-        upperLimit,
-        lowerLimit;
+        upperAstrixLimit,
+        lowerAstrixLimit;
     int [][] diamond;
 
     Scanner input = new Scanner(System.in);
@@ -26,16 +26,16 @@ public class Diamond {
       diamond = new int[size][size];
     }
 
-    lowerLimit = size / 2;
-    upperLimit = size / 2;
+    lowerAstrixLimit = size / 2;
+    upperAstrixLimit = size / 2;
 
     if(size % 2 != 0) {
       for(int row = 0; row < diamond.length; ++row) {
         for(int col = 0; col < diamond[row].length; ++col) {
-          if(col <= upperLimit && col >= lowerLimit) {
+          if(col <= upperAstrixLimit && col >= lowerAstrixLimit) {
             System.out.print("*");
 
-            if(col == upperLimit) {
+            if(col == upperAstrixLimit) {
 
               break;
 
@@ -47,12 +47,12 @@ public class Diamond {
         }
 
         if(row < diamond.length / 2) {
-          ++upperLimit;
-          --lowerLimit;
+          ++upperAstrixLimit;
+          --lowerAstrixLimit;
         }
         else {
-          --upperLimit;
-          ++lowerLimit;
+          --upperAstrixLimit;
+          ++lowerAstrixLimit;
         }
 
         System.out.println();
@@ -62,7 +62,7 @@ public class Diamond {
     for(int row = 0; row < diamond.length; ++row) {
       for(int col = 0; col < diamond[row].length; ++col) {
         if(row == 0 || row == diamond.length - 1) {
-          if(col >= lowerLimit && col <= upperLimit) {
+          if(col >= lowerAstrixLimit && col <= upperAstrixLimit) {
             System.out.print("*");
 
             break;
@@ -77,9 +77,9 @@ public class Diamond {
 
             continue;
           }
-          if(col >= lowerLimit && col <= upperLimit) {
+          if(col >= lowerAstrixLimit && col <= upperAstrixLimit) {
             System.out.print(" *");
-            if(col == upperLimit) {
+            if(col == upperAstrixLimit) {
 
               break;
 
@@ -92,12 +92,12 @@ public class Diamond {
       }
 
       if(row < diamond.length / 2) {
-        ++upperLimit;
-        --lowerLimit;
+        ++upperAstrixLimit;
+        --lowerAstrixLimit;
       }
       else {
-        --upperLimit;
-        ++lowerLimit;
+        --upperAstrixLimit;
+        ++lowerAstrixLimit;
       }
 
       System.out.println();
