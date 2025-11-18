@@ -2,7 +2,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class RunMatrix {
-  public static void main(String[] args) {
+  public static void main(String[] args){
     int size = 0;
     Scanner input = new Scanner(System.in);
 
@@ -30,5 +30,3 @@ public class RunMatrix {
     matrix.printMatrix();
   }
 }
-
-//try , catch

@@ -1,7 +1,7 @@
 public class Matrix {
   private int[][] matrix;
 
-  public Matrix(int size) {
+  public Matrix(int size){
     matrix = new int[size][size];
 
     System.out.println("You have made a matrix of " + matrix.length + " X " + matrix[0].length);
@@ -14,11 +14,11 @@ public class Matrix {
     matrix[x2][y2] = tempHolder;
   }
 
-  public void printMatrix() {
+  public void printMatrix(){
     for(int y = 0; y < matrix.length; ++y) {
       for(int x = 0; x < matrix[y].length; ++x) {
         if((x + y) == matrix.length - 1){
-          System.out.printf("%s%4d%s","\033[35m\033[1m", matrix[x][y], "\033[0m");
+          System.out.printf("%s%4d%s", "\033[35m\033[1m", matrix[x][y], "\033[0m");
         }
         else{
         System.out.printf("%4d", matrix[x][y]);
@@ -28,7 +28,7 @@ public class Matrix {
     }
   }
 
-  public void flipMatrix() {
+  public void flipMatrix(){
     System.out.println("\nFlipping matrix....matrix flipped:\n");
     int lastValue = matrix.length - 1;
 
@@ -41,11 +41,11 @@ public class Matrix {
     }
   }
 
-  public void populateMatrix() {
+  public void populateMatrix(){
     System.out.println("\nPopulating matrix with values....matrix populated:\n");
     int counter = 0;
 
-    for(int y = 0; y < matrix.length; ++y) {
+    for(int y = 0; y < matrix.length; ++y){
       for(int x = 0; x < matrix[y].length; ++x){
         matrix[x][y] = ++counter;
       }
